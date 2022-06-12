@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#section {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px 10px;
+  display: flex;
+}
+.left {
+  background-color: #aaa;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 3px 5px #aaa;
+  display: flex;
+  flex-direction: column;
+}
+.left button {
+  width: 100px;
+  height: 40px;
+  margin: 0 auto 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.left button:hover {
+  color: brown;
+  transform: scale(1.1);
+}
+.left button i {
+  color: brown;
+}
+.left button i:last-of-type {
+  display: none;
+}
+.left button:first-child i:last-of-type {
+  display: inline-block;
+}
+.left button:first-child i:first-of-type {
+  display: none;
+}
+
+.right {
+  flex: 1;
+  background: #ddd;
+  padding: 20px;
+}
+.right .bai {
+  display: none;
+}
+.right .bai:first-child {
+  display: block;
+}
+.right h1 {
+  margin-bottom: 20px;
+}
+.right h3 {
+  margin-bottom: 10px;
+  color: brown;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+.right input,
+.right select {
+  font-size: 20px;
+  padding: 8px;
+  margin: 0 20px 10px 0;
+  outline: none;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 0px 3px 3px #aaa inset;
+  background-color: #eee;
+  max-width: 100%;
+  width: 220px;
+  appearance: none;
+}
+.right input:focus,
+.right select:focus {
+  background-color: #fff;
+  box-shadow: 1px 3px 3px #aaa;
+}
+.right button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+  background-color: brown;
+  color: #fff;
+  margin-right: 20px;
+}
+.right button:hover {
+  transform: scale(1.1);
+}
+.right .ketqua {
+  font-size: 30px;
+  background-color: #0fd191;
+  border-radius: 6px;
+  line-height: 50px;
+  padding: 0 5px;
+}
+.right .ketqua i {
+  color: brown;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  #section {
+    display: block;
+  }
+  .left {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .left button {
+    margin: 0 10px 10px 0;
+  }
+}

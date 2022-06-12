@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC32E_NguyenDinhTai_BT_JS_buoi4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section id="section">
+        <div class="left">
+            <button>
+                <i class="fa fa-book"></i>
+                <i class="fa fa-book-open"></i>
+                <span>Bài 1</span>
+            </button>
+            <button>
+                <i class="fa fa-book"></i>
+                <i class="fa fa-book-open"></i>
+                <span>Bài 2</span>
+            </button>
+            <button>
+                <i class="fa fa-book"></i>
+                <i class="fa fa-book-open"></i>
+                <span>Bài 3</span>
+            </button>
+            <button>
+                <i class="fa fa-book"></i>
+                <i class="fa fa-book-open"></i>
+                <span>Bài 4</span>
+            </button>
+        </div>
+        <div class="right">
+            <div class="bai animate__animated animate__fadeIn">
+                <h1>Bài 1: Quản lý tuyển sinh</h1>
+                <input type="number" id="diemChuan" placeholder="Nhập điểm chuẩn">
+                <select id="khuVuc">
+                    <option value="0">Chọn khu vực</option>
+                    <option value="2">Khu vực A</option>
+                    <option value="1">Khu vực B</option>
+                    <option value="0.5">Khu vực C</option>
+                </select>
+                <select id="doiTuong">
+                    <option value="0">Chọn đối tượng</option>
+                    <option value="2.5">Đối tượng 1</option>
+                    <option value="1.5">Đối tượng 2</option>
+                    <option value="1">Đối tượng 3</option>
+                </select>
+                <input type="number" id="diemMon1" placeholder="Điểm môn 1">
+                <input type="number" id="diemMon2" placeholder="Điểm môn 2">
+                <input type="number" id="diemMon3" placeholder="Điểm môn 3">
+                <br><button id="btn_bai1">Kết quả</button>
+                <div class="ketqua">
+                    <i class="fa fa-hand-point-right"></i>
+                    <span class="kqBai1"></span>
+                </div>
+            </div>
+
+            <div class="bai animate__animated animate__fadeIn">
+                <h1>Bài 2: Tính tiền điện</h1>
+                <input type="text" id="hoTen" placeholder="Họ và tên">
+                <input type="number" id="soKw" placeholder="Nhập số Kw">
+                <br><button id="btn_bai2">Tính tiền điện</button>
+                <div class="ketqua">
+                    <i class="fa fa-hand-point-right"></i>
+                    <span class="kqBai2"></span>
+                </div>
+            </div>
+
+            <div class="bai animate__animated animate__fadeIn">
+                <h1>Bài 3: Tính thuế thu nhập cá nhân</h1>
+                <input type="text" id="b3_hoTen" placeholder="Họ và tên">
+                <input type="number" id="thuNhapNam" placeholder="Tổng thu nhập năm">
+                <input type="number" id="nguoiPhuThuoc" placeholder="Số người phụ thuộc">
+                <br><button id="btn_bai3">Tính tiền thuế</button>
+                <div class="ketqua">
+                    <i class="fa fa-hand-point-right"></i>
+                    <span class="kqBai3"></span>
+                </div>
+            </div>
+
+            <div class="bai animate__animated animate__fadeIn">
+                <h1>Bài 4: Tính tiền cáp</h1>
+                <select id="khachHang">
+                    <option value="">Chọn loại khách hàng</option>
+                    <option value="1">Nhà dân</option>
+                    <option value="2">Doanh nghiệp</option>
+                </select>
+                <input type="text" id="maKhachHang" placeholder="Nhập mã khác hàng">
+                <input type="number" id="soKenh" placeholder="Số kênh cao cấp">
+                <input type="number" id="soKetNoi" placeholder="Số kết nối" style="display: none;">
+                <br><button id="btn_bai4">Tính tiền cáp</button>
+                <div class="ketqua">
+                    <i class="fa fa-hand-point-right"></i>
+                    <span class="kqBai4"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
