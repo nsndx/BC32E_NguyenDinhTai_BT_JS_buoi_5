@@ -73,11 +73,11 @@ document.getElementById('btn_bai1').onclick = function () {
     } else if (diemMon1 < 0 || diemMon1 > 10 || diemMon2 < 0 || diemMon2 > 10 || diemMon3 < 0 || diemMon3 > 10) {
         kqBai1 = 'Điểm môn sai'
     } else if (tongDiem >= diemChuan && diemMon1 > 0 && diemMon2 > 0 && diemMon3 > 0) {
-        kqBai1 = 'Bạn đã đậu. Tổng điểm: ' + tongDiem.toFixed(1)
+        kqBai1 = 'Bạn đã đậu. Tổng điểm: ' + tongDiem.toFixed(2)
     } else if (diemMon1 == 0 || diemMon2 == 0 || diemMon3 == 0) {
         kqBai1 = 'Bạn đã trượt do có điểm bằng 0'
     } else {
-        kqBai1 = 'Bạn đã trượt. Tổng điểm: ' + tongDiem.toFixed(1)
+        kqBai1 = 'Bạn đã trượt. Tổng điểm: ' + tongDiem.toFixed(2)
     }
     document.querySelector('.right .kqBai1').innerHTML = kqBai1
 }
