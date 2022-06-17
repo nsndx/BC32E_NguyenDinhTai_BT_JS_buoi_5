@@ -67,7 +67,7 @@ document.getElementById('btn_bai1').onclick = function () {
     var diemMon2 = Number(document.getElementById('diemMon2').value)
     var diemMon3 = Number(document.getElementById('diemMon3').value)
     var tongDiem = diemMon1 + diemMon2 + diemMon3 + khuVuc + doiTuong
-    var kqBai1;
+    var kqBai1 = '';
     if (diemChuan < 0 || diemChuan > 30) {
         kqBai1 = 'Điểm chuẩn sai'
     } else if (diemMon1 < 0 || diemMon1 > 10 || diemMon2 < 0 || diemMon2 > 10 || diemMon3 < 0 || diemMon3 > 10) {
@@ -100,7 +100,7 @@ document.getElementById('btn_bai1').onclick = function () {
 document.getElementById('btn_bai2').onclick = function () {
     var hoTen = document.getElementById('hoTen').value
     var soKw = Number(document.getElementById('soKw').value)
-    var kqBai2
+    var kqBai2 = '';
     if (soKw <= 0) {
         kqBai2 = 'Mời nhập số Kw điện'
     } else if (soKw > 0 && soKw <= 50) {
@@ -119,15 +119,18 @@ document.getElementById('btn_bai2').onclick = function () {
 
 //Bài 3: Tính thuế thu nhập cá nhân
 document.getElementById('btn_bai3').onclick = function () {
-    //input
+    // input: string, number
     var b3_hoTen = document.getElementById('b3_hoTen').value
     var thuNhapNam = Number(document.getElementById('thuNhapNam').value)
     var soNguoiPhuThuoc = Number(document.getElementById('nguoiPhuThuoc').value)
-    var kqBai3;
+    // output: string
+    var kqBai3 = '';
+    // progress
     var thuNhapChiuThue = thuNhapNam - 4000000 - soNguoiPhuThuoc * 1600000
-    //progress
     if (thuNhapNam == '') {
         kqBai3 = 'Nhập tổng thu nhập năm'
+    } else if (thuNhapChiuThue <= 0) {
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Không phải đóng thuế'
     } else if (thuNhapChiuThue > 0 && thuNhapChiuThue <= 60000000) {
         kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (thuNhapChiuThue * 0.05).toLocaleString() + 'đ'
     } else if (thuNhapChiuThue > 60000000 && thuNhapChiuThue <= 120000000) {
@@ -143,8 +146,7 @@ document.getElementById('btn_bai3').onclick = function () {
     } else {
         kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + 240000000 * 0.25 + 336000000 * 0.3 + (thuNhapChiuThue - 960000000) * 0.35).toLocaleString() + 'đ'
     }
-
-    // output
+    // in output ra giao diện
     document.querySelector('.right .kqBai3').innerHTML = kqBai3
 }
 
@@ -158,12 +160,13 @@ document.getElementById('khachHang').oninput = function () {
     }
 }
 document.getElementById('btn_bai4').onclick = function () {
-    // input
+    // input: string, number
     var khachHang = document.getElementById('khachHang').value
     var maKhachHang = document.getElementById('maKhachHang').value
     var soKenh = Number(document.getElementById('soKenh').value)
     var soKetNoi = Number(document.getElementById('soKetNoi').value)
-    var kqBai4;
+    // output: string
+    var kqBai4 = '';
     // progress
     if (khachHang == '') {
         kqBai4 = 'Mời chọn loại khách hàng'
@@ -174,6 +177,6 @@ document.getElementById('btn_bai4').onclick = function () {
     } else {
         kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (15 + 75 + 5 * (soKetNoi - 10) + 50 * soKenh).toFixed(2)
     }
-    // output
+    // in output ra giao diện
     document.querySelector('.right .kqBai4').innerHTML = kqBai4
 }
