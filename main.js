@@ -73,11 +73,11 @@ document.getElementById('btn_bai1').onclick = function () {
     } else if (diemMon1 < 0 || diemMon1 > 10 || diemMon2 < 0 || diemMon2 > 10 || diemMon3 < 0 || diemMon3 > 10) {
         kqBai1 = 'Điểm môn sai'
     } else if (tongDiem >= diemChuan && diemMon1 > 0 && diemMon2 > 0 && diemMon3 > 0) {
-        kqBai1 = 'Bạn đã đậu. Tổng điểm: ' + tongDiem.toFixed(2)
+        kqBai1 = 'Bạn đã đậu. Tổng điểm: ' + tongDiem.toLocaleString('vn', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     } else if (diemMon1 == 0 || diemMon2 == 0 || diemMon3 == 0) {
         kqBai1 = 'Bạn đã trượt do có điểm bằng 0'
     } else {
-        kqBai1 = 'Bạn đã trượt. Tổng điểm: ' + tongDiem.toFixed(2)
+        kqBai1 = 'Bạn đã trượt. Tổng điểm: ' + tongDiem.toLocaleString('vn', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     }
     document.querySelector('.right .kqBai1').innerHTML = kqBai1
 }
@@ -104,15 +104,15 @@ document.getElementById('btn_bai2').onclick = function () {
     if (soKw <= 0) {
         kqBai2 = 'Mời nhập số kW điện'
     } else if (soKw > 0 && soKw <= 50) {
-        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (soKw * 500).toLocaleString() + 'đ'
+        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (soKw * 500).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (soKw > 50 && soKw <= 100) {
-        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + (soKw - 50) * 650).toLocaleString() + 'đ'
+        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + (soKw - 50) * 650).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (soKw > 100 && soKw <= 200) {
-        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + (soKw - 100) * 850).toLocaleString() + 'đ'
+        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + (soKw - 100) * 850).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (soKw > 200 && soKw <= 350) {
-        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + 100 * 850 + (soKw - 200) * 1100).toLocaleString() + 'đ'
+        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + 100 * 850 + (soKw - 200) * 1100).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else {
-        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (soKw - 350) * 1300).toLocaleString() + 'đ'
+        kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (soKw - 350) * 1300).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     }
     document.querySelector('.right .kqBai2').innerHTML = kqBai2
 }
@@ -132,19 +132,19 @@ document.getElementById('btn_bai3').onclick = function () {
     } else if (thuNhapChiuThue <= 0) {
         kqBai3 = 'Họ tên: ' + b3_hoTen + ', Không phải đóng thuế'
     } else if (thuNhapChiuThue > 0 && thuNhapChiuThue <= 60000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (thuNhapChiuThue * 0.05).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (thuNhapChiuThue * 0.05).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (thuNhapChiuThue > 60000000 && thuNhapChiuThue <= 120000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + (thuNhapChiuThue - 60000000) * 0.1).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + (thuNhapChiuThue - 60000000) * 0.1).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (thuNhapChiuThue > 120000000 && thuNhapChiuThue <= 210000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + (thuNhapChiuThue - 120000000) * 0.15).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + (thuNhapChiuThue - 120000000) * 0.15).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (thuNhapChiuThue > 210000000 && thuNhapChiuThue <= 384000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + (thuNhapChiuThue - 210000000) * 0.2).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + (thuNhapChiuThue - 210000000) * 0.2).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (thuNhapChiuThue > 384000000 && thuNhapChiuThue <= 624000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + (thuNhapChiuThue - 384000000) * 0.25).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + (thuNhapChiuThue - 384000000) * 0.25).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else if (thuNhapChiuThue > 624000000 && thuNhapChiuThue <= 960000000) {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + 240000000 * 0.25 + (thuNhapChiuThue - 624000000) * 0.3).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + 240000000 * 0.25 + (thuNhapChiuThue - 624000000) * 0.3).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     } else {
-        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + 240000000 * 0.25 + 336000000 * 0.3 + (thuNhapChiuThue - 960000000) * 0.35).toLocaleString() + 'đ'
+        kqBai3 = 'Họ tên: ' + b3_hoTen + ', Thuế thu nhập cá nhân bằng: ' + (60000000 * 0.05 + 60000000 * 0.1 + 90000000 * 0.15 + 174000000 * 0.2 + 240000000 * 0.25 + 336000000 * 0.3 + (thuNhapChiuThue - 960000000) * 0.35).toLocaleString('vn', { maximumFractionDigits: 0 }) + 'đ'
     }
     // in output ra giao diện
     document.querySelector('.right .kqBai3').innerHTML = kqBai3
@@ -171,11 +171,11 @@ document.getElementById('btn_bai4').onclick = function () {
     if (khachHang == '') {
         kqBai4 = 'Mời chọn loại khách hàng'
     } else if (khachHang == 1) {
-        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (4.5 + 20.5 + 7.5 * soKenh).toFixed(2)
+        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (4.5 + 20.5 + 7.5 * soKenh).toLocaleString('vn', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     } else if (khachHang == 2 && soKetNoi <= 10) {
-        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (15 + 75 + 50 * soKenh).toFixed(2)
+        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (15 + 75 + 50 * soKenh).toLocaleString('vn', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     } else {
-        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (15 + 75 + 5 * (soKetNoi - 10) + 50 * soKenh).toFixed(2)
+        kqBai4 = 'Mã khách hàng: ' + maKhachHang + ', Tiền cáp: $' + (15 + 75 + 5 * (soKetNoi - 10) + 50 * soKenh).toLocaleString('vn', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     }
     // in output ra giao diện
     document.querySelector('.right .kqBai4').innerHTML = kqBai4
