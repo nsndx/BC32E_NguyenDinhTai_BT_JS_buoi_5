@@ -84,16 +84,16 @@ document.getElementById('btn_bai1').onclick = function () {
 
 // Bài 2: Tính tiền điện
 /*Mô hình 3 khối
-- Đầu vào: Họ tên và số Kw điện sử dụng
+- Đầu vào: Họ tên và số kW điện sử dụng
 - Xử lý: 
     + Tạo biến hoTen và gán giá trị từ người dùng nhập
     + Tạo biến soKw và gán giá trị từ người dùng nhập
     + Tính tiền điện theo khoảng giá 
-        50Kw đầu 500d/Kw
-        50Kw kế 650d/Kw
-        100Kw kế 850d/Kw
-        150Kw kế 1100d/Kw
-        Còn lại 1300d/Kw
+        50Kw đầu 500d/kW
+        50Kw kế 650d/kW
+        100Kw kế 850d/kW
+        150Kw kế 1100d/kW
+        Còn lại 1300d/kW
     + Tạo biến kqBai2;
 - Đầu ra: Họ tên và tiền điện phải trả
  */
@@ -102,7 +102,7 @@ document.getElementById('btn_bai2').onclick = function () {
     var soKw = Number(document.getElementById('soKw').value)
     var kqBai2 = '';
     if (soKw <= 0) {
-        kqBai2 = 'Mời nhập số Kw điện'
+        kqBai2 = 'Mời nhập số kW điện'
     } else if (soKw > 0 && soKw <= 50) {
         kqBai2 = 'Họ tên: ' + hoTen + ', Tiền điện: ' + (soKw * 500).toLocaleString() + 'đ'
     } else if (soKw > 50 && soKw <= 100) {
