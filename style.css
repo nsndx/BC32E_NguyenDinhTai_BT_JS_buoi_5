@@ -10,7 +10,8 @@
   display: flex;
 }
 .left {
-  background-color: #aaa;
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
   padding: 20px;
   width: 200px;
   box-shadow: 0 3px 5px #aaa;
@@ -47,7 +48,8 @@
 
 .right {
   flex: 1;
-  background: #ddd;
+  background-color: #ffcfdf;
+  background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
   padding: 20px;
 }
 .right .bai {
